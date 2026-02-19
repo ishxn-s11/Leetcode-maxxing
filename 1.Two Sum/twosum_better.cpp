@@ -1,0 +1,14 @@
+class Solution {
+public:
+//Better Approach
+    vector<int>twoSum(vector<int>& nums,int target) {
+        map<int,int>m;
+        for(int i=0;i<nums.size();i++){
+            int a=nums[i];
+            int x=target-a;
+            if(m.find(x)!=m.end()) return {m[x],i};
+            m[a]=i;
+        }
+        return {-1};
+    }
+};
